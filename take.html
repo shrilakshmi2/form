@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 250px 1fr 250px
+        }
+        form{
+            grid-column-start: 2;
+            grid-column-end: 3;
+          
+            height: auto;
+        }
+        .qn{
+            background-color:wheat;
+            margin: 50px;
+        }
+        input{
+            margin: 10px;
+        }
+        form {
+    max-width: 800px;
+    margin:  30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.qn {
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+button[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+
+button[type="submit"]:hover {
+    background-color: #09386a;
+    color: #f4f4f4;
+}
+    </style>
+</head>
+<body>
+    <p class="time"></p>
+    <div class="head">
+        <p class="title"></p>
+        <p class="name"></p>
+    </div>
+    <form action="/response" method="post">
+        <div class="detail">
+            <p>Your name:</p>
+            <input type="text" name="name" required>
+            <p>e-mail:</p>
+            <input type="email" name="email" required>
+<!-- 
+        </div>
+        <div class="qn">
+            <div id="qn1">
+                <p></p>
+                <input type="radio" name="qn1" class="radio"><span></span>
+                <input type="radio" name="qn1" class="radio"><span></span>
+                <input type="radio" name="qn1" class="radio"><span></span>
+                <input type="radio" name="qn1" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn2">
+                <p></p>
+                <input type="radio" name="qn2" class="radio"><span></span>
+                <input type="radio" name="qn2" class="radio"><span></span>
+                <input type="radio" name="qn2" class="radio"><span></span>
+                <input type="radio" name="qn2" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn3">
+                <p></p>
+                <input type="radio" name="qn3" class="radio"><span></span>
+                <input type="radio" name="qn3" class="radio"><span></span>
+                <input type="radio" name="qn3" class="radio"><span></span>
+                <input type="radio" name="qn3" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn4">
+                <p></p>
+                <input type="radio" name="qn4"  class="radio"><span></span>
+                <input type="radio" name="qn4"  class="radio"><span></span>
+                <input type="radio" name="qn4"  class="radio"><span></span>
+                <input type="radio" name="qn4" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn5">
+                <p></p>
+                <input type="radio" name="qn5" class="radio" ><span></span>
+                <input type="radio" name="qn5" class="radio" ><span></span>
+                <input type="radio" name="qn5" class="radio" ><span></span>
+                <input type="radio" name="qn5" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn6">
+                <p></p>
+                <input type="radio" name="qn6" class="radio" ><span></span>
+                <input type="radio" name="qn6" class="radio" ><span></span>
+                <input type="radio" name="qn6" class="radio" ><span></span>
+                <input type="radio" name="qn6" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn7">
+                <p></p>
+                <input type="radio" name="qn7" class="radio" ><span></span>
+                <input type="radio" name="qn7" class="radio" ><span></span>
+                <input type="radio" name="qn7" class="radio" ><span></span>
+                <input type="radio" name="qn7" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn8">
+                <p></p>
+                <input type="radio" name="qn8" class="radio"><span></span>
+                <input type="radio" name="qn8" class="radio" ><span></span>
+                <input type="radio" name="qn8" class="radio" ><span></span>
+                <input type="radio" name="qn8" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn9">
+                <p></p>
+                <input type="radio" name="qn9" class="radio" ><span></span>
+                <input type="radio" name="qn9" class="radio" ><span></span>
+                <input type="radio" name="qn9" class="radio" ><span></span>
+                <input type="radio" name="qn9" class="radio"><span></span>
+            </div>
+        </div>
+        <div class="qn">
+            <div id="qn10">
+                <p></p>
+                <input type="radio" name="qn10"  class="radio"><span></span>
+                <input type="radio" name="qn10" class="radio" ><span></span>
+                <input type="radio" name="qn10" class="radio" ><span></span>
+                <input type="radio" name="qn10" class="radio"><span></span>
+            </div>
+        </div>
+        <button type="submit" disabled="true" class="submit">submit</button><p class="msg"></p> -->
+
+    </form>
+    <script>
+        let interval1
+        async function init(){
+          let x=await fetch('qns.txt')
+          x=await x.text()
+          x=JSON.parse(x)
+          let cur=await fetch('forms.txt')
+            cur=await cur.text()
+            cur=JSON.parse(cur)
+          key=Object.keys(x[cur['curform']])
+            interval1=key.length
+          for(i=1;i<=key.length;i++){
+            let div=document.createElement('div')
+            div.setAttribute('class','qn')
+            div.innerHTML=`<div id="qn${i}">
+                <p></p>
+                <input type="radio" name="qn${i}"  class="radio"><span></span>
+                <input type="radio" name="qn${i}" class="radio" ><span></span>
+                <input type="radio" name="qn${i}" class="radio" ><span></span>
+                <input type="radio" name="qn${i}" class="radio"><span></span>
+            </div>`
+            document.getElementsByTagName('form')[0].appendChild(div)
+          }
+          let btn=document.createElement('button')
+          btn.innerHTML='submit'
+          btn.setAttribute('class','submit')
+          btn.setAttribute('type','submit')
+          btn.setAttribute('disabled','true')
+          document.getElementsByTagName('form')[0].appendChild(btn)
+          let p=document.createElement('p')
+          p.setAttribute('class','msg')
+          document.getElementsByTagName('form')[0].appendChild(p)
+          nametitle()
+        }
+        async function filiing(){
+            let x=await fetch('qns.txt')
+            x=await x.text()
+            x=JSON.parse(x)
+            let cur=await fetch('forms.txt')
+            cur=await cur.text()
+            cur=JSON.parse(cur)
+            let current=x[cur['curform']]
+            // console.log(current)
+            let fill=document.getElementsByClassName('qn')
+            // console.log(fill)
+            counti=0
+            obj=Object.keys(current)
+            // console.log(obj)
+            for(i of fill){
+                // console.log(i)
+                
+                j=i.children[0].children
+                // console.log(j[0])
+                j[0].innerHTML=current[obj[counti]]['qn']
+                countj=1
+                for(m=2;m<=8;m+=2){
+                    j[m].innerHTML=current[obj[counti]][`op${countj}`]
+                    j[m-1].value=current[obj[counti]][`op${countj}`]
+                    countj++
+                }
+                counti++
+                // console.log(obj[counti])
+            }
+                
+            
+        }
+
+
+
+
+        init()
+        filiing()
+        fetchtime()
+
+
+        
+        setInterval(()=>{
+            let x=document.getElementsByClassName('radio')
+            count=0
+        for(i of x){
+            if(i.checked){
+                count++
+            }
+            if(count==interval1){
+                document.getElementsByClassName('submit')[0].removeAttribute('disabled')
+                document.getElementsByClassName('msg')[0].innerHTML='done'
+                clearInterval(1)
+            }
+            else{
+                document.getElementsByClassName('msg')[0].innerHTML='Please answer all the qns'
+            }
+        }
+        },1000)
+        
+
+
+        async function nametitle(){
+            let nt=await fetch('/nametitle')
+            nt=await nt.text()
+            nt=JSON.parse(nt)
+            console.log(nt)
+            document.getElementsByClassName('title')[0].innerHTML=nt['title']
+            document.getElementsByClassName('name')[0].innerHTML=`host:${nt['name']}`
+        }
+       function timelimit(limit){
+        time=0,min=0
+        setInterval(() => {
+           if(time==60){
+            min++
+            time=0
+           }
+           else{
+            time++
+           }
+           if(min==limit){
+            document.getElementsByClassName('msg')[0].innerHTML='Times up,You can not submit the test.'
+            document.getElementsByClassName('submit')[0].setAttribute('disabled','true')
+            clearInterval(2)
+            clearInterval(1)
+           }
+           document.getElementsByClassName('time')[0].innerHTML=`${min}:${time}`
+        }, 1000);
+       }
+
+
+        async function fetchtime(){
+            let form=await fetch('endis.txt')
+            form= await form.text()
+            form=JSON.parse(form)
+            let cur=await fetch('forms.txt')
+            cur=await cur.text()
+            cur=JSON.parse(cur)
+            if(form[cur['curform']]['time']=='no'){
+                document.getElementsByClassName('time')[0].remove()
+                clearInterval(2)
+                return
+            }
+            let time=form[cur['curform']]['time']
+            time=Number(time)
+            timelimit(time)
+       }
+       document.addEventListener('copy',(e)=>{
+        e.preventDefault()
+        console.log(e.defaultPrevented)
+       })
+       
+    </script>
+</body>
+</html>

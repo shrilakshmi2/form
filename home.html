@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="title.png" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dforms</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            background-image: url(./home.png);
+            background-size: 100%;
+        }
+        .container{
+            position: absolute;
+            left: 40%;
+            top: 20%;
+            border: 1px solid black;
+            background-color: rgb(255, 166, 71);
+            height: 300px;
+            width: 300px;
+            border-radius:5px ;
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            grid-row: 1fr 1fr 1fr 1fr;
+        }
+       .name,.mail{
+        height: 30px;
+        margin-top: 10px;
+        width: 90%;
+        border-radius: 5px;
+        background-color: rgba(255, 228, 196, 0.444);
+       }
+       .container a{
+        text-decoration: none;
+        border-radius: 2px;
+        width: 60px;
+        align-self: center;
+        margin:0px auto;
+        height: 50px;
+        text-align: center;
+        /* padding-top: 10px; */
+        color: black;
+        background-color:darkolivegreen;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: flex;
+        flex-direction: column;
+       }
+       .container a p{
+        align-self: center;
+       }
+       .container form{
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+       form input[name='code']{
+        background-color: rgba(255, 228, 196, 0.61);
+        height: 30px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p >NAME:</p><input type="text" name="name" class="name">
+        <p>e-MAIL:</p><input type="email" name="mail"  class='mail'>
+        <a href='/host'><p>HOST</p></a>
+        <a href="/view">View test</a>
+        <form class="take" action="/take" method="post">
+            <p>Enter the code:</p>
+            <input type="text" name="code" style="margin-left: 5px;">
+            <input type="submit" value="Take test">
+        </div>
+    </div>
+</body>
+</html>

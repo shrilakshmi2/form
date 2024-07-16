@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>response</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Your reponse has been recorded</h2>
+        <h3></h3>
+    </div>
+</body>
+<script>
+    async function init(){
+        let x=await fetch('response.txt')
+        x=await x.text()
+        x=JSON.parse(x)
+        let send=x
+        let y=await fetch('ans.txt')
+        y=await y.text()
+        y=JSON.parse(y)
+       let obj1=Object.keys(x)
+       x=x[obj1[0]]['ans']
+        
+        file=await fetch('forms.txt')
+        file=await file.text()
+        file=JSON.parse(file)
+        
+       
+        obj2=Object.keys(file)
+        console.log(obj2[0])
+        console.log(y)
+        y=y[file[obj2[0]]]
+        console.log(y)
+    key1=Object.keys(x)
+    key2=Object.keys(y)
+    count=0
+    for(i=0;i<key2.length;i++){
+        if(x[key1[i+2]]==y[key2[i]]){
+            count++
+        }
+    }
+    document.getElementsByTagName('h3')[0].innerHTML=`${count}/${key2.length}`
+    send={[file['curform']]:{name:send[obj1[0]]['ans']['name'],score:`${count}/${key2.length}`,dt:send[obj1[0]]['dt']}}
+    // console.log(send)
+    await fetch('/namesave',{
+        method:'post',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(send)
+    })
+
+
+
+    }
+    init()
+</script>
+</html>
